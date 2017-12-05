@@ -16,9 +16,18 @@
 }
 body {
   background-image: url("../img/bg_aguas_padrao.jpg");
+  background-color: #faefde;
   background-position: 0 50px;
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+h1, h2, h3 {
+  font-family: Lato Regular, sans-serif;
+}
+
+p {
+  font-family: Lato Light, sans-serif;
 }
 
 .menu-global {
@@ -43,9 +52,20 @@ body {
   color: #2b86b2;
 }
 
+.logo-inema {
+  width: 150px;
+  height: 80px;
+  margin: 10px auto;
+  background-image: url("../img/inema.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
 .logo-concurso {
   width: 420px;
-  margin: 100px auto 400px auto;
+  margin: 100px auto 430px auto;
   border: 1px solid white;
   padding: 40px 30px;
   -moz-border-radius: 4px;
@@ -71,4 +91,82 @@ body {
 .container--principal {
   background: #fff;
   width: 85%;
+  padding: 40px 120px;
+  position: relative;
+}
+.container--principal h2 {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: #1b546f;
+  text-align: center;
+  margin-top: 70px;
+  margin: 70px auto 30px auto;
+}
+.container--principal h3 {
+  font-family: Lato light, sans-serif;
+  font-size: 1em;
+  margin: 20px auto;
+}
+.container--principal .info-col {
+  z-index: 500;
+  position: absolute;
+  top: -40px;
+  right: 100px;
+  height: 300px;
+}
+.container--principal .info-col .info-destaque {
+  background: #1b546f;
+  padding: 35px;
+  width: 235px;
+}
+.container--principal .info-col .info-destaque h2, .container--principal .info-col .info-destaque h3 {
+  font-size: 1em;
+  color: #2b86b2;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 20px auto 70px auto;
+}
+.container--principal .info-col .info-destaque h3 {
+  margin: auto;
+}
+.container--principal .info-col .info-destaque p {
+  font-family: Lato Regular, sans-serif;
+  margin-top: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 0.88em;
+}
+.container--principal .info-col button {
+  margin: 40px 22px;
+  float: none;
+  background: #1b546f;
+  color: #fff;
+  border-radius: 0px;
+  padding: 10px 30px;
+  font-size: 0.88em;
+  font-family: Lato Regular, sans-serif;
+  text-transform: uppercase;
+}
+.container--principal ul {
+  margin-bottom: 30px;
+}
+.container--principal ul li {
+  font-family: Lato light, sans-serif;
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 70px;
+  border-top: 10px solid #1b546f;
+  background: #fff;
+}
+
+.col-md-12--concurso {
+  padding-right: 490px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+.justify-text {
+  text-align: justify;
 }

@@ -25,15 +25,27 @@
 
 // Cores
 $cor-azul-menu-bg: #1b546f;
+$cor-amarelo-bg: #faefde;
 $cor-azul-menu-links: #2b86b2;
 $cor-cinza-logo-concurso: #797878;
+$cor-cinza: #ccc;
+$cor-verde-destaque: #1b546f;
+
 $cor-branca: #fff;
 
 body{
     background-image:url('../img/bg_aguas_padrao.jpg');
+    background-color:$cor-amarelo-bg;
     background-position: 0 50px;
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+h1, h2, h3{
+    font-family: Lato Regular, sans-serif;
+}
+p{
+    font-family: Lato Light, sans-serif;
 }
 
 .menu-global{
@@ -58,9 +70,20 @@ body{
     }
 }
 
+.logo-inema{
+    width:150px;
+    height: 80px;
+    margin:10px auto;
+    background-image: url('../img/inema.jpg');
+    background-size: contain;
+    background-position:center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
 .logo-concurso{
     width:420px;
-    margin:100px auto 400px auto;
+    margin:100px auto 430px auto;
     border: 1px solid white;
     padding: 40px 30px;
     @include border-radius(4px);
@@ -84,4 +107,92 @@ body{
 .container--principal{
     background: $cor-branca;
     width:85%;
+    padding: 40px 120px;
+    position: relative;
+    h2{
+        text-transform: uppercase;
+        font-size: 1.1em;
+        color: $cor-verde-destaque;
+        text-align: center;
+        margin-top:70px;
+        margin:70px auto 30px auto;
+    }
+
+    h3{
+        font-family: Lato light, sans-serif;
+        font-size: 1em;
+        margin:20px auto;
+      
+
+    }
+    .info-col{
+        z-index: 500;
+        position: absolute;
+        top:-40px;
+        right: 100px;
+        height: 300px;        
+        .info-destaque{
+            background: $cor-verde-destaque;
+            padding:35px;
+            width:235px;
+            h2, h3{
+                font-size: 1em;
+                color: $cor-azul-menu-links;
+                text-align: left;
+                text-transform: uppercase;
+                margin:20px auto 70px auto;
+            }
+            h3{
+                margin:auto;
+            }
+            p{
+                font-family: Lato Regular, sans-serif;
+                margin-top:10px;
+                text-transform: uppercase;
+                color:$cor-branca;
+                font-size: 0.88em;
+            }
+            
+        }
+
+        button{
+            margin:40px 22px;
+            float: none;
+            background: $cor-verde-destaque;
+            color:$cor-branca;
+            border-radius: 0px;
+            padding: 10px 30px;
+            font-size: 0.88em;
+            font-family: Lato Regular, sans-serif;
+            text-transform: uppercase;
+        }
+
+    }
+
+    ul{
+        margin-bottom:30px;
+        li{
+            font-family: Lato light, sans-serif;
+            margin-bottom: 10px;
+        }
+    }
+
 }
+
+footer{
+    margin-top:70px;
+    border-top: 10px solid $cor-verde-destaque;
+    background: $cor-branca;
+}
+
+//Helpers
+.col-md-12--concurso{
+    padding-right:490px;
+    padding-bottom: 40px;
+    border-bottom:1px solid $cor-cinza;
+}
+
+.justify-text{
+    text-align: justify;
+}
+
