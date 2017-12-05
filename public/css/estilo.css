@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Lato Regular";
+  src: url("../fontes/lato/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato Light";
+  src: url("../fontes/lato/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Merienda Regular";
+  src: url("../fontes/merienda/Merienda-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Merienda Bold";
+  src: url("../fontes/merienda/Merienda-Bold.ttf") format("truetype");
+}
+body {
+  background-image: url("../img/bg_aguas_padrao.jpg");
+  background-position: 0 50px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.menu-global {
+  background: #1b546f;
+  height: 50px;
+}
+.menu-global ul {
+  margin: 16px 0 0 0;
+  padding: 0;
+}
+.menu-global ul li {
+  float: left;
+  list-style: none;
+  font-family: 'Lato Light', sans-serif;
+  text-transform: uppercase;
+  margin: 0 12px;
+}
+.menu-global ul li:first-child {
+  margin-left: 0px;
+}
+.menu-global ul li a {
+  color: #2b86b2;
+}
+
+.logo-concurso {
+  width: 420px;
+  margin: 100px auto 400px auto;
+  border: 1px solid white;
+  padding: 40px 30px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.logo-concurso h1 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 43px;
+  font-family: Merienda Regular, sans-serif;
+  color: #797878;
+  text-shadow: 1px 1px 1px #2c2c2c;
+}
+.logo-concurso p {
+  text-align: center;
+  margin: 15px auto;
+  font-size: 1.8em;
+  color: #797878;
+}
+
+.container--principal {
+  background: #fff;
+  width: 85%;
+}

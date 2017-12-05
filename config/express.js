@@ -11,7 +11,7 @@ module.exports = function(){
   app.use(express.static("./public"));
 
   consign({cwd: 'app'})
-    .include('routes')
+    //.include('routes')
     .then('infra')
     .into(app);
 

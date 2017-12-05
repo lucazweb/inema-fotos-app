@@ -1,0 +1,17 @@
+{
+  "name": "inema-fotos-app",
+  "homepage": "https://github.com/lucazweb/inema-fotos-app",
+  "authors": [
+    "lucazweb <lucas.design@globo.com>"
+  ],
+  "description": "desafio inema 2017",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
