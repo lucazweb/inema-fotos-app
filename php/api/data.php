@@ -25,15 +25,12 @@ if($_FILES['file']){
 }
 
 
-// if(file_get_contents('php://input')){
-//     $data = file_get_contents('php://input');
-//     $data = json_decode($data);
-//     print_r($data);
-//     //$form->setData($data);
-//     //$form->handle();
-// } else {
-//     echo ":0";
-// }
+$dbConfig = array();
+$dbConfig['local']['host'] = 'localhost';
+$dbConfig['local']['user'] = 'root';
+$dbConfig['local']['password'] = 'root';
+$dbConfig['local']['database'] = 'agendado';
+$table = "inscricao";
 
 
 ?>
