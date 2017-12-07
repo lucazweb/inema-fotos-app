@@ -79,7 +79,6 @@ p {
   font-size: 43px;
   font-family: Merienda Regular, sans-serif;
   color: #797878;
-  text-shadow: 1px 1px 1px #2c2c2c;
 }
 .logo-concurso p {
   text-align: center;
@@ -169,4 +168,17 @@ footer {
 
 .justify-text {
   text-align: justify;
+}
+
+.form-row .form-group {
+  width: 48%;
+  float: left;
+  margin-left: 2%;
+}
+
+.termos {
+  border: 1px solid #ccc;
+  padding: 15px;
+  height: 100px;
+  overflow-y: auto;
 }

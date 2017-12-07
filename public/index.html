@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html ng-app="FotoApp" lang="pt-br">
     <head>
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
         <link href="css/estilo.css" rel="stylesheet">
+        <script src="bower_components/jquery/dist/jquery.js"></script>
     </head>
-    <body>
+    <body ng-controller="mainCtrl">
         <div class="container-fluid menu-global">
             <div class="container">
                 <ul>
@@ -15,10 +16,13 @@
                     <li><a href="#"> O Concurso </a></li>
                     <li><a href="#"> Sobre </a></li>
                     <li><a href="#"> Regras </a></li>
-                    <li><a href="#"> Inscrição </a></li>
+                    <li><a data-toggle="modal" data-target="#myModal"> Inscrição </a></li>
                 </ul>
             </div>
         </div>
+        <pre>
+            {{foto}}
+        </pre>
         <div class="logo-concurso">
             <h1>Varal das Águas</h1>
             <p>Concurso de Fotografia</p>
@@ -85,5 +89,79 @@
             <div class="logo-inema"></div>
         </footer>
 
+        <!-- Inscrição -->
+     
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Cadastro</h4>
+            </div>
+            <form ng-submit="enviar">
+            <div class="modal-body">
+                
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome do colaborador</label>
+                            <input ng-model="foto.colaborador" class="form-control" placeholder="Insira o seu nome" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome">Nome da foto</label>
+                            <input ng-model="foto.nome" class="form-control" placeholder="Insira o nome da foto" type="text">
+                        </div>  
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Local da foto</label>
+                            <input ng-model="foto.local" class="form-control" placeholder="Insira o local da foto" type="text">            
+                        </div>    
+
+                        <div class="form-group">
+                            <label for="nome">Data de registro</label>
+                            <input ng-model="foto.data" class="form-control" placeholder="MM/DD/YYYY" type="text">
+                        </div> 
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputFile">Anexar foto</label>
+                        <input type="file" ngf-select="" ng-model="picFile" name="file" ngf-accept="'image/*'" required="">
+                        <p class="help-block">Enviar</p>
+                    </div>
+                    <div class="termos">
+                        <p>
+                            I. Confirmo autoria da fotografia, que não constitui plágio em espécia alguma
+                            e não possui manipulação digital ou sobre posição.
+                        </p>
+                        <p>
+                            II. Declaro cessão de direito de uso e publicação da fotografia "Varal das Águas";
+                        </p>
+                        <p>
+                            III. Autorização para veiculação de imagens e nome do colaborador, nome artístico para a foto,
+                            local e data de registro da foto, bem como permissão para os organizadores, a critério próprio, sem limite
+                            de tempo e sem à incidencia de quaisquer ônus utilizarem ou divulgarem as imagens inscritas  ...
+                        </p>
+                    </div>                
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Eu li e concordo com os termos
+                    </label>
+                    </div>
+                
+            </div>
+           
+            <div class="modal-footer">
+              <button  ng-click="enviar(foto, picFile)"  class="btn btn-primary">Enviar</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>        
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"> </script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
+    <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>

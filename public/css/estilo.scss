@@ -94,7 +94,7 @@ p{
         font-size: 43px;
         font-family: Merienda Regular, sans-serif;
         color: $cor-cinza-logo-concurso;
-        text-shadow: 1px 1px 1px darken($cor-cinza-logo-concurso, 30%);
+        // text-shadow: 1px 1px 1px darken($cor-cinza-logo-concurso, 30%);
     }
     p{
         text-align: center;
@@ -196,3 +196,17 @@ footer{
     text-align: justify;
 }
 
+.form-row{
+    .form-group{
+        width:48%;
+        float: left;
+        margin-left:2%;
+    }
+}
+
+.termos{
+    border: 1px solid $cor-cinza;
+    padding:15px;
+    height:100px;
+    overflow-y: auto;
+}
