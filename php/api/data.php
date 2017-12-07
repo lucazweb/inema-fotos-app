@@ -29,8 +29,8 @@ $dbConfig = array();
 $dbConfig['local']['host'] = 'localhost';
 $dbConfig['local']['user'] = 'root';
 $dbConfig['local']['password'] = 'root';
-$dbConfig['local']['database'] = 'agendado';
-$table = "inscricao";
+$dbConfig['local']['database'] = 'varaldasaguas';
+$table = "fotos";
 
 
 ?>
