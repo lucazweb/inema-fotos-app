@@ -24,7 +24,6 @@ if($_FILES['file']){
     echo "Algo deu errado, tente novamente;";
 }
 
-
 $dbConfig = array();
 $dbConfig['local']['host'] = 'localhost';
 $dbConfig['local']['user'] = 'root';
