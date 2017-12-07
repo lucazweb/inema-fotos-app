@@ -1,6 +1,6 @@
 angular.module('FotoApp', ['ngFileUpload'])
     .controller('mainCtrl', function($scope, $http, Upload){
-        const endpoint = "http://localhost/inemaapi/aguas/api/data.php";
+        const endpoint = "../php/api/data.php";
         $scope.enviar = function(foto, file){
             console.log(foto);
             console.log(file);
@@ -16,7 +16,6 @@ angular.module('FotoApp', ['ngFileUpload'])
                     }
             }).then(function (resp) {
                 console.log(resp);
-                    //console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
                 }, function (err) {
                     console.log(err);
                     //console.log('Error status: ' + resp.status);

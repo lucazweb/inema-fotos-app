@@ -2,34 +2,33 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-type: multipart/form-data');
 
-//echo $_FILES['file']['name'];
-//echo $_POST['colaborador'];
+require('Connect.class.php');
 
-$path = "fotos/";
 
 if($_FILES['file']){
-    //$data = $_POST;
-    $colaborador = $_POST['colaborador']; 
-    $fotoNome    = $_POST['fotoNome'];
-    $local       = $_POST['fotoLocal'];
-    $data_registro  = $_POST['fotoData'];
-    
-    //echo $colaborador . ' - ' . $nomefoto . ' - ' . $local . ' - ' . $data;
 
+    $path = "fotos/";
+    $file = $path . basename($_FILES['file']['name']);
     $tmp_name = $_FILES["file"]["tmp_name"];
-    $foto_nome_arquivo = $_FILES['file']['name'];
-    move_uploaded_file( $tmp_name , "$path" );
+
+    $foto = array();
+    $foto["colaborador"] = $_POST["colaborador"];
+    $foto["foto_nome"] = $_POST["fotoNome"];
+    $foto["foto_local"] = $_POST['fotoLocal'];
+    $foto["foto_data_registro"] = $_POST["fotoData"];
+    $foto["url"] = $file;
+    
+    $pdo = Connect::Con();
+    $sql = Connect::Store($foto, 'fotos');
+    $pdo->query($sql);
+       
+    //move_uploaded_file( $tmp_name , $file);
 
 }else{
     echo "Algo deu errado, tente novamente;";
 }
 
-$dbConfig = array();
-$dbConfig['local']['host'] = 'localhost';
-$dbConfig['local']['user'] = 'root';
-$dbConfig['local']['password'] = 'root';
-$dbConfig['local']['database'] = 'varaldasaguas';
-$table = "fotos";
+
 
 
 ?>
