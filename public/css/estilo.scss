@@ -166,6 +166,9 @@ p{
             font-size: 0.88em;
             font-family: Lato Regular, sans-serif;
             text-transform: uppercase;
+            &:hover{
+                background: darken($cor-verde-destaque, 10%);
+            }
         }
 
     }

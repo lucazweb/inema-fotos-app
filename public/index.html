@@ -33,7 +33,7 @@
                     <h3>Apresentação</h3>
                     <p>20/03/2017 das 16:00h <br> ás 17:30h.</p>
                 </div>
-                <button class="btn btn-inscricao"> Faça sua inscrição </button>
+                <button data-toggle="modal" data-target="#myModal" class="btn btn-inscricao"> Faça sua inscrição </button>
             </div>
             
             <div class="row">
@@ -172,7 +172,7 @@
         <div ng-hide="visualiza" class="listagem-imagens">
             <div ng-click="fecharModal()" class="btn-fechar">X</div>
             <ul>
-                <li ng-repeat="item in fotos" ng-click="visualizarImagem($index)">
+                <li ng-repeat="item in fotos | limitTo: 6 | orderBy: item.id_foto" ng-click="visualizarImagem($index)">
                     <div class="img-item-info">
                         <h3>{{item.foto_nome}}</h3>
                         <p> {{item.foto_local}}</p>
@@ -186,17 +186,18 @@
 
         <div ng-show="visualiza" class="img-view">
             <div ng-click="fecharModal()" class="btn-fechar">X</div>
-            <div class="foto-info">{{foto.nome}} - {{foto.local}} <div ng-click="visualizarListagem()" style="float:right">Visuazizar imagens cadastradas</div> </div>
+            <div class="foto-info">{{fotoExibida.nome}} por {{fotoExibida.colaborador}} <div ng-click="visualizarListagem()" style="float:right">Visuazizar imagens cadastradas</div> </div>
             <div class="img-cadastro">
-                <img width="100%" height="auto" ng-src="{{imgurl}}" alt="" />
+                <img width="100%" height="auto" ng-src="{{fotoExibida.url}}" alt="" />
             </div>        
         </div>
       </div>
-
 
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"> </script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/FotosAPIService.js"></script>
+    <script type="text/javascript" src="js/mainController.js"></script>
     </body>
 </html>

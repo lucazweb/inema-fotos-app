@@ -146,6 +146,9 @@ p {
   font-family: Lato Regular, sans-serif;
   text-transform: uppercase;
 }
+.container--principal .info-col button:hover {
+  background: #113546;
+}
 .container--principal ul {
   margin-bottom: 30px;
 }
