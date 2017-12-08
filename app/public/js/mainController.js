@@ -2,6 +2,7 @@ angular.module('FotoApp')
     .controller('mainCtrl', function($scope, FotosAPI, Upload){
         const endpoint = FotosAPI.getApiurl();
         $scope.imgStatus = false;
+        $scope.foto = {};
         $scope.fotos = [];
         $scope.fotoExibida = {};
 
