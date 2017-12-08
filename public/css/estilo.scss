@@ -190,17 +190,47 @@ p{
     background: $cor-preta-translucida;
 
     .listagem-imagens{
+        height: 450px;
         ul{
             margin: 0;
             padding: 0;
             li{
                 position: relative;
-                width: 250px;
+                width: 262px;
                 list-style: none;
                 float:left;
                 margin:10px;
+                overflow: hidden;
+                cursor: pointer;
+                .img-item-info{
+                    width: 100%;
+                    height: 262px;
+                    transition: all ease 0.6s;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background:$cor-preta-translucida;
+                    opacity:0;
+                    h3{
+                        text-align: center;
+                        color:$cor-branca;
+                    }
+                    p{
+                        color:$cor-branca;
+                        text-align: center;
+                        font-family: Lato Regular, sans-serif;
+                    }
+                }
+
                 img{
                     width:100%;
+                    height: 180px;
+                }
+
+                &:hover{
+                    .img-item-info{
+                        opacity:1;
+                    }
                 }
             }
         }
@@ -209,7 +239,7 @@ p{
     .img-view, .listagem-imagens{
         width:70%;
         position: relative;
-        margin:100px auto;
+        margin:50px auto;
         background:white;
         padding:15px;
         border-radius:4px;
@@ -235,7 +265,15 @@ p{
             &:hover{
                 background: $cor-vermelha;
             }
-          }                        
+        
+        .btn-galeria{
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            z-index: 600;
+        }
+
+        }                        
     }    
 }
 

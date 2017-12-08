@@ -169,19 +169,25 @@
       <div class="img-view-overflow exibe-{{imgStatus}}">
 
     
-        <div class="listagem-imagens">
+        <div ng-hide="visualiza" class="listagem-imagens">
+            <div ng-click="fecharModal()" class="btn-fechar">X</div>
             <ul>
-                <li ng-repeat="item in fotos">
+                <li ng-repeat="item in fotos" ng-click="visualizarImagem($index)">
+                    <div class="img-item-info">
+                        <h3>{{item.foto_nome}}</h3>
+                        <p> {{item.foto_local}}</p>
+                        <p>Por {{item.colaborador}}</p>
+                    </div>                    
                     <img ng-src="http://localhost/inemaapp/php/api/{{item.url}}" alt="">
                 </li>
             </ul>
         </div>
 
 
-        <div class="img-view">
+        <div ng-show="visualiza" class="img-view">
             <div ng-click="fecharModal()" class="btn-fechar">X</div>
-            <div class="foto-info">{{foto.nome}} - {{foto.local}}</div>
-            <div class="img-cadastro ">
+            <div class="foto-info">{{foto.nome}} - {{foto.local}} <div ng-click="visualizarListagem()" style="float:right">Visuazizar imagens cadastradas</div> </div>
+            <div class="img-cadastro">
                 <img width="100%" height="auto" ng-src="{{imgurl}}" alt="" />
             </div>        
         </div>

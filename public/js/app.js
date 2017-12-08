@@ -33,17 +33,22 @@ angular.module('FotoApp', ['ngFileUpload'])
                 console.log(res);
                 $scope.imgurl = "http://localhost/inemaapp/php/api/" + res.data.url;
                 angular.element('#myModal').modal('hide');
-                $scope.imgStatus = true;
-                
-
-
-
+                $scope.imgStatus = true; //  Deixar essa váriavel mais clara
+                $scope.visualiza = true;
                 }, function (err) {
                     console.log(err);
-                    //console.log('Error status: ' + resp.status);
                 });            
-
         };
+
+        $scope.visualizarImagem = function(index){
+            console.log($scope.fotos[index].url);
+            $scope.imgurl = "http://localhost/inemaapp/php/api/" + $scope.fotos[index].url;
+            $scope.visualiza = true;
+        }
+
+        $scope.visualizarListagem = function(){
+            $scope.visualiza = !$scope.visualiza;
+        }
 
         $scope.scrollSlider = function(pos){
             angular.element('html').animate({scrollTop: pos}, 800, function() { 

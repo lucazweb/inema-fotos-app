@@ -163,24 +163,52 @@ p {
   left: 0;
   background: rgba(0, 0, 0, 0.8);
 }
+.img-view-overflow .listagem-imagens {
+  height: 450px;
+}
 .img-view-overflow .listagem-imagens ul {
   margin: 0;
   padding: 0;
 }
 .img-view-overflow .listagem-imagens ul li {
   position: relative;
-  width: 250px;
+  width: 262px;
   list-style: none;
   float: left;
   margin: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.img-view-overflow .listagem-imagens ul li .img-item-info {
+  width: 100%;
+  height: 262px;
+  transition: all ease 0.6s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+}
+.img-view-overflow .listagem-imagens ul li .img-item-info h3 {
+  text-align: center;
+  color: #fff;
+}
+.img-view-overflow .listagem-imagens ul li .img-item-info p {
+  color: #fff;
+  text-align: center;
+  font-family: Lato Regular, sans-serif;
 }
 .img-view-overflow .listagem-imagens ul li img {
   width: 100%;
+  height: 180px;
+}
+.img-view-overflow .listagem-imagens ul li:hover .img-item-info {
+  opacity: 1;
 }
 .img-view-overflow .img-view, .img-view-overflow .listagem-imagens {
   width: 70%;
   position: relative;
-  margin: 100px auto;
+  margin: 50px auto;
   background: white;
   padding: 15px;
   border-radius: 4px;
@@ -207,6 +235,12 @@ p {
 }
 .img-view-overflow .img-view .btn-fechar:hover, .img-view-overflow .listagem-imagens .btn-fechar:hover {
   background: #900;
+}
+.img-view-overflow .img-view .btn-fechar .btn-galeria, .img-view-overflow .listagem-imagens .btn-fechar .btn-galeria {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  z-index: 600;
 }
 
 footer {
