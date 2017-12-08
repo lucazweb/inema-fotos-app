@@ -1,5 +1,5 @@
 <?php 
-    # Classe de conexão ao banco de dados
+    # Conexão ao banco de dados
     
 	class Connect {
 
@@ -26,7 +26,6 @@
 			return self::$db;
         }
         
-
         public static function Store($array, $table){
 
             $query = "INSERT INTO `$table` (COLS) VALUES (%VAL%);";
