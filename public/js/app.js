@@ -2,8 +2,16 @@ angular.module('FotoApp', ['ngFileUpload'])
     .controller('mainCtrl', function($scope, $http, Upload){
         const endpoint = "../php/api/data.php";
         $scope.imgStatus = false;
-        //$scope.foto = {};
-        
+        $scope.fotos = [];
+
+        $http.get(endpoint)
+            .then(function(res){
+                console.log(res);
+                $scope.fotos = res.data;
+            }, function(err){
+                console.log(err);
+            });
+
         $scope.fecharModal = function(){
             $scope.imgStatus = !$scope.imgStatus;
         }
@@ -27,6 +35,9 @@ angular.module('FotoApp', ['ngFileUpload'])
                 angular.element('#myModal').modal('hide');
                 $scope.imgStatus = true;
                 
+
+
+
                 }, function (err) {
                     console.log(err);
                     //console.log('Error status: ' + resp.status);
@@ -44,7 +55,6 @@ angular.module('FotoApp', ['ngFileUpload'])
             angular.element('.botao-navegar-topo').css('opacity', '0');
         }
 
-
         $scope.navegarItem = function(event, title){
             console.log(event.target.textContent);
             let offset = angular.element('#'+title).offset();
@@ -55,20 +65,3 @@ angular.module('FotoApp', ['ngFileUpload'])
             }, 2000);    
         }
     });
-
-
-/*
-
-function() ySlide(e){
-    console.log(e.target);
-}
-
-var body = $("html, body");
-body.animate({scrollTop:0}, 500, 'swing', function() { 
-   alert("Finished animating");
-});
-
-// preciso identificar a posição dos titles dinamicamente
-
-
-*/

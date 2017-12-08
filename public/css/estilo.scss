@@ -188,7 +188,25 @@ p{
     top: 0;
     left: 0;
     background: $cor-preta-translucida;
-    .img-view{
+
+    .listagem-imagens{
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                position: relative;
+                width: 250px;
+                list-style: none;
+                float:left;
+                margin:10px;
+                img{
+                    width:100%;
+                }
+            }
+        }
+    }
+
+    .img-view, .listagem-imagens{
         width:70%;
         position: relative;
         margin:100px auto;

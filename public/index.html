@@ -86,7 +86,7 @@
             <div class="logo-inema"></div>
         </footer>
         <div class="botao-navegar-topo" ng-click="scrollSlider(0); esconderSeta()"> voltar</div>
-    <!-- Inscrição -->
+      <!-- Inscrição -->
      
       <!-- Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -167,6 +167,17 @@
       </div>      
 
       <div class="img-view-overflow exibe-{{imgStatus}}">
+
+    
+        <div class="listagem-imagens">
+            <ul>
+                <li ng-repeat="item in fotos">
+                    <img ng-src="http://localhost/inemaapp/php/api/{{item.url}}" alt="">
+                </li>
+            </ul>
+        </div>
+
+
         <div class="img-view">
             <div ng-click="fecharModal()" class="btn-fechar">X</div>
             <div class="foto-info">{{foto.nome}} - {{foto.local}}</div>

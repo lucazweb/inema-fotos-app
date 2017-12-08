@@ -163,7 +163,21 @@ p {
   left: 0;
   background: rgba(0, 0, 0, 0.8);
 }
-.img-view-overflow .img-view {
+.img-view-overflow .listagem-imagens ul {
+  margin: 0;
+  padding: 0;
+}
+.img-view-overflow .listagem-imagens ul li {
+  position: relative;
+  width: 250px;
+  list-style: none;
+  float: left;
+  margin: 10px;
+}
+.img-view-overflow .listagem-imagens ul li img {
+  width: 100%;
+}
+.img-view-overflow .img-view, .img-view-overflow .listagem-imagens {
   width: 70%;
   position: relative;
   margin: 100px auto;
@@ -171,7 +185,7 @@ p {
   padding: 15px;
   border-radius: 4px;
 }
-.img-view-overflow .img-view .foto-info {
+.img-view-overflow .img-view .foto-info, .img-view-overflow .listagem-imagens .foto-info {
   position: absolute;
   font-family: Lato Regular, sans-serif;
   padding: 10px;
@@ -179,7 +193,7 @@ p {
   color: white;
   width: 96.5%;
 }
-.img-view-overflow .img-view .btn-fechar {
+.img-view-overflow .img-view .btn-fechar, .img-view-overflow .listagem-imagens .btn-fechar {
   position: absolute;
   top: -16px;
   right: -14px;
@@ -191,7 +205,7 @@ p {
   z-index: 500;
   cursor: pointer;
 }
-.img-view-overflow .img-view .btn-fechar:hover {
+.img-view-overflow .img-view .btn-fechar:hover, .img-view-overflow .listagem-imagens .btn-fechar:hover {
   background: #900;
 }
 

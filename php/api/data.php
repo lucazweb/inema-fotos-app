@@ -4,15 +4,16 @@ header('Content-type: multipart/form-data');
 
 require('Connect.class.php');
 
-// if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-   
-// } else {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    
+    
+    $pdo = Connect::Con();
+    $sql = "SELECT * FROM fotos";
+    $stmt = $pdo->query($sql);
+    $res = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+    echo $res;
 
-// }
-
-
-if($_FILES['file']){
-
+} elseif($_FILES['file']){
     $path = "fotos/";
     $file = $path . basename($_FILES['file']['name']);
     $tmp_name = $_FILES["file"]["tmp_name"];
@@ -37,12 +38,12 @@ if($_FILES['file']){
         $res = json_encode($foto);
         echo $res;
     }
-    
-}else{
-    echo "Algo deu errado, tente novamente;";
+
+}else {
+    echo "Algo deu errado, tente novamente;"; 
 }
 
-
+ 
 
 
 ?>
