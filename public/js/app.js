@@ -33,5 +33,42 @@ angular.module('FotoApp', ['ngFileUpload'])
                 });            
 
         };
-   
+
+        $scope.scrollSlider = function(pos){
+            angular.element('html').animate({scrollTop: pos}, 800, function() { 
+                console.log("Finished animating");
+             });
+        }
+
+        $scope.esconderSeta = function(){
+            angular.element('.botao-navegar-topo').css('opacity', '0');
+        }
+
+
+        $scope.navegarItem = function(event, title){
+            console.log(event.target.textContent);
+            let offset = angular.element('#'+title).offset();
+            let yPos = offset.top;
+            $scope.scrollSlider(yPos);
+            setTimeout(function(){
+                angular.element('.botao-navegar-topo').css('opacity', '0.8');
+            }, 2000);    
+        }
     });
+
+
+/*
+
+function() ySlide(e){
+    console.log(e.target);
+}
+
+var body = $("html, body");
+body.animate({scrollTop:0}, 500, 'swing', function() { 
+   alert("Finished animating");
+});
+
+// preciso identificar a posição dos titles dinamicamente
+
+
+*/

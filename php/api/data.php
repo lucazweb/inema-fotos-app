@@ -4,6 +4,12 @@ header('Content-type: multipart/form-data');
 
 require('Connect.class.php');
 
+// if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+   
+// } else {
+
+// }
+
 
 if($_FILES['file']){
 
