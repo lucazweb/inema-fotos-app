@@ -20,10 +20,18 @@ if($_FILES['file']){
     
     $pdo = Connect::Con();
     $sql = Connect::Store($foto, 'fotos');
-    $pdo->query($sql);
-       
-    //move_uploaded_file( $tmp_name , $file);
-
+    if(!$sql){
+        return;
+    }else{
+        $pdo->query($sql);
+        move_uploaded_file( $tmp_name , $file);
+        $foto['id'] = $pdo->lastInsertId();
+        $foto['url'] = $file;
+        // Retornar dados json
+        $res = json_encode($foto);
+        echo $res;
+    }
+    
 }else{
     echo "Algo deu errado, tente novamente;";
 }

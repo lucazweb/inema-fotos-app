@@ -46,8 +46,6 @@
             return $query;            
         }
 
-
-
 	}
 
  ?>

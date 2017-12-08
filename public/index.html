@@ -95,9 +95,19 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title" id="myModalLabel">Cadastro</h4>
             </div>
-            <form ng-submit="enviar">
+            
+                <style>
+                    .exibe-false{
+                        display: none;
+                    }
+
+                    .exibe-true{
+                        display: block;
+                    }
+
+                </style>
             <div class="modal-body">
-                
+                    <form ng-submit="enviar"></form>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="nome">Nome do colaborador</label>
@@ -141,20 +151,72 @@
                         </p>
                     </div>                
                     <div class="checkbox">
-                    <label>
-                        <input type="checkbox"> Eu li e concordo com os termos
-                    </label>
+                        <label>
+                            <input ng-model="termos" type="checkbox"> Eu li e concordo com os termos
+                        </label>
                     </div>
-                
             </div>
            
             <div class="modal-footer">
-              <button  ng-click="enviar(foto, picFile)"  class="btn btn-primary">Enviar</button>
+              <button ng-disabled="!termos"  ng-click="enviar(foto, picFile)"  class="btn btn-primary">Enviar</button>
             </div>
             </form>
           </div>
         </div>
-      </div>        
+      </div>      
+      <style>
+          .img-view-overflow{
+              width:100%;
+              height: 800px;
+              z-index: 600;
+              position: fixed;
+              top: 0;
+              left: 0;
+              background: rgba(0, 0, 0, 0.8);
+          }
+
+          .img-view{
+              width:70%;
+              position: relative;
+              margin:100px auto;
+              background:white;
+              padding:15px;
+              border-radius:4px;
+          }
+
+          .img-view .foto-info {
+            position: absolute;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            width: 96.5%;
+          }          
+
+          .btn-fechar{
+            position: absolute;
+            top: -16px;
+            right: -14px;
+            background: #900;
+            color: white;
+            border-radius: 21px;
+            width: auto;
+            padding: 11px 16px;
+            z-index: 500;
+            cursor:pointer;
+          }
+
+      </style>
+      <div class="img-view-overflow exibe-{{imgStatus}}">
+        <div class="img-view">
+            <div class="btn-fechar">X</div>
+            <div class="foto-info">{{foto.nome}} - {{foto.local}}</div>
+            <div class="img-cadastro ">
+                <img width="100%" height="auto" ng-src="{{imgurl}}" alt="" />
+            </div>        
+        </div>
+      </div>
+
+
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/ng-file-upload/ng-file-upload.min.js"> </script>
     <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"> </script>

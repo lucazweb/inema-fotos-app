@@ -1,6 +1,8 @@
 angular.module('FotoApp', ['ngFileUpload'])
     .controller('mainCtrl', function($scope, $http, Upload){
         const endpoint = "../php/api/data.php";
+        $scope.imgStatus = false;
+        $scope.foto = {};
         $scope.enviar = function(foto, file){
             console.log(foto);
             console.log(file);
@@ -14,8 +16,12 @@ angular.module('FotoApp', ['ngFileUpload'])
                         fotoLocal: foto.local,
                         fotoData: foto.data
                     }
-            }).then(function (resp) {
-                console.log(resp);
+            }).then(function (res) {
+                console.log(res);
+                $scope.imgurl = "http://localhost/inemaapp/php/api/" + res.data.url;
+                angular.element('#myModal').modal('hide');
+                $scope.imgStatus = true;
+                
                 }, function (err) {
                     console.log(err);
                     //console.log('Error status: ' + resp.status);
