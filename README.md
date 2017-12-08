@@ -4,9 +4,13 @@ Site para concurso de fotografias - AngularJS + PHP
 
 ## Instalação
     
-Copiar pasta ou clonar repositório num servidor com suporte a PHP;
-    
-Importar scripts para criação e carga do banco: Os arquivos .sql estão na pasta sql/, na raiz do projeto;
+
+
+1. Copiar pasta ou clonar repositório num servidor com suporte a PHP;
+
+2. Na pasta app/public/ , executar o comando bower install (Instalação das dependências do projeto);
+
+3. Importar scripts para criação e carga do banco: Os arquivos .sql estão na pasta sql/, na raiz do projeto;
     
 
 ### Visão geral
