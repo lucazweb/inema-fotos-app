@@ -296,7 +296,16 @@ footer{
     background: $cor-branca;
 }
 
-//Helpers
+// HELPERS
+
+.exibe-false{
+    display: none;
+}
+
+.exibe-true{
+    display: block;
+}
+
 .col-md-12--concurso{
     padding-right:490px;
     padding-bottom: 40px;

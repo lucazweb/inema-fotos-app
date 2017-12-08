@@ -27,17 +27,18 @@ angular.module('FotoApp')
                         fotoData: foto.data
                     }
             }).then(function (res) {
-                $scope.foto = '';
                 $scope.fotoExibida.colaborador = res.data.colaborador;
                 $scope.fotoExibida.nome = res.data.foto_nome;
                 $scope.fotoExibida.url = "../php/api/" + res.data.url;
-                
+                $scope.fotos.push(res.data);
                 angular.element('#myModal').modal('hide');
-                $scope.imgStatus = true; //  Deixar essa váriavel mais clara
+                $scope.imgStatus = true;
                 $scope.visualiza = true;
                 }, function (err) {
                     console.log(err);
-                });            
+            });
+
+            $scope.foto = {};            
         };
 
         $scope.visualizarImagem = function(index){
