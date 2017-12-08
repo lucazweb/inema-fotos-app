@@ -2,7 +2,7 @@ angular.module('FotoApp', ['ngFileUpload'])
     .controller('mainCtrl', function($scope, $http, Upload){
         const endpoint = "../php/api/data.php";
         $scope.imgStatus = false;
-        $scope.foto = {};
+        //$scope.foto = {};
         
         $scope.fecharModal = function(){
             $scope.imgStatus = !$scope.imgStatus;
