@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        
         <link href="css/estilo.css" rel="stylesheet">
         <script src="bower_components/jquery/dist/jquery.js"></script>
     </head>
@@ -127,14 +128,14 @@
 
                         <div class="form-group">
                             <label for="nome">Data de registro</label>
-                            <input ng-model="foto.data" class="form-control" placeholder="MM/DD/YYYY" type="text">
+                            <input ng-model="date" ng-model="foto.data" class="form-control" placeholder="MM/DD/YYYY" type="text">
                         </div> 
                     </div>
                     
                     <div class="form-group">
                         <label for="exampleInputFile">Anexar foto</label>
                         <input type="file" ngf-select="" ng-model="picFile" name="file" ngf-accept="'image/*'" required="">
-                        <p class="help-block">Enviar</p>
+                        
                     </div>
                     <div class="termos">
                         <p>
@@ -164,51 +165,10 @@
           </div>
         </div>
       </div>      
-      <style>
-          .img-view-overflow{
-              width:100%;
-              height: 800px;
-              z-index: 600;
-              position: fixed;
-              top: 0;
-              left: 0;
-              background: rgba(0, 0, 0, 0.8);
-          }
 
-          .img-view{
-              width:70%;
-              position: relative;
-              margin:100px auto;
-              background:white;
-              padding:15px;
-              border-radius:4px;
-          }
-
-          .img-view .foto-info {
-            position: absolute;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            color: white;
-            width: 96.5%;
-          }          
-
-          .btn-fechar{
-            position: absolute;
-            top: -16px;
-            right: -14px;
-            background: #900;
-            color: white;
-            border-radius: 21px;
-            width: auto;
-            padding: 11px 16px;
-            z-index: 500;
-            cursor:pointer;
-          }
-
-      </style>
       <div class="img-view-overflow exibe-{{imgStatus}}">
         <div class="img-view">
-            <div class="btn-fechar">X</div>
+            <div ng-click="fecharModal()" class="btn-fechar">X</div>
             <div class="foto-info">{{foto.nome}} - {{foto.local}}</div>
             <div class="img-cadastro ">
                 <img width="100%" height="auto" ng-src="{{imgurl}}" alt="" />

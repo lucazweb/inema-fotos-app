@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Lato Regular"; 
+  font-family: "Lato Regular";
   src: url("../fontes/lato/Lato-Regular.ttf") format("truetype");
 }
 @font-face {
@@ -152,6 +152,47 @@ p {
 .container--principal ul li {
   font-family: Lato light, sans-serif;
   margin-bottom: 10px;
+}
+
+.img-view-overflow {
+  width: 100%;
+  height: 800px;
+  z-index: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+.img-view-overflow .img-view {
+  width: 70%;
+  position: relative;
+  margin: 100px auto;
+  background: white;
+  padding: 15px;
+  border-radius: 4px;
+}
+.img-view-overflow .img-view .foto-info {
+  position: absolute;
+  font-family: Lato Regular, sans-serif;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 96.5%;
+}
+.img-view-overflow .img-view .btn-fechar {
+  position: absolute;
+  top: -16px;
+  right: -14px;
+  background: #1b546f;
+  color: #fff;
+  border-radius: 21px;
+  width: auto;
+  padding: 11px 16px;
+  z-index: 500;
+  cursor: pointer;
+}
+.img-view-overflow .img-view .btn-fechar:hover {
+  background: #900;
 }
 
 footer {

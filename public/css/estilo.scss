@@ -30,8 +30,9 @@ $cor-azul-menu-links: #2b86b2;
 $cor-cinza-logo-concurso: #797878;
 $cor-cinza: #ccc;
 $cor-verde-destaque: #1b546f;
-
+$cor-vermelha: #900;
 $cor-branca: #fff;
+$cor-preta-translucida: rgba(0, 0, 0, 0.8);
 
 body{
     background-image:url('../img/bg_aguas_padrao.jpg');
@@ -177,6 +178,47 @@ p{
         }
     }
 
+}
+
+.img-view-overflow{
+    width:100%;
+    height: 800px;
+    z-index: 600;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $cor-preta-translucida;
+    .img-view{
+        width:70%;
+        position: relative;
+        margin:100px auto;
+        background:white;
+        padding:15px;
+        border-radius:4px;
+        .foto-info {
+            position: absolute;
+            font-family: Lato Regular, sans-serif;
+            padding: 10px;
+            background: $cor-preta-translucida;
+            color: white;
+            width: 96.5%;
+          }
+          .btn-fechar{
+            position: absolute;
+            top: -16px;
+            right: -14px;
+            background:$cor-verde-destaque;
+            color: $cor-branca;
+            border-radius: 21px;
+            width: auto;
+            padding: 11px 16px;
+            z-index: 500;
+            cursor:pointer;
+            &:hover{
+                background: $cor-vermelha;
+            }
+          }                        
+    }    
 }
 
 footer{

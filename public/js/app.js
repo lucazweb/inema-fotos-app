@@ -3,6 +3,11 @@ angular.module('FotoApp', ['ngFileUpload'])
         const endpoint = "../php/api/data.php";
         $scope.imgStatus = false;
         $scope.foto = {};
+        
+        $scope.fecharModal = function(){
+            $scope.imgStatus = !$scope.imgStatus;
+        }
+
         $scope.enviar = function(foto, file){
             console.log(foto);
             console.log(file);
