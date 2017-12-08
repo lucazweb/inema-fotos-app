@@ -12,6 +12,9 @@ Importar scripts para criação e carga do banco: Os arquivos .sql estão na pas
 ### Visão geral
 
 ```
+sql/
+    varal_das_aguas.sql
+
 app/
   README.md
   php/
