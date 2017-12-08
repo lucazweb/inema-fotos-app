@@ -1,9 +1,16 @@
-Instruções para execução do projeto
+# Desafio Inema 2017
 
+Site para concurso de fotografias - AngularJS + PHP
+
+## Instalação
+    ```
     * Copiar pasta ou clonar repositório num servidor local com suporte a PHP;
+    ```
+    ```
     * Importar scripts para criação e carga do banco: Os arquivos .sql estão na pasta sql/, na raiz do projeto;
+    ```
 
-Visão Geral
+### Visão geral
 
 ```
 app/
